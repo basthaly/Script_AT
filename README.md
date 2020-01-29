@@ -1,2 +1,2 @@
 # Script_AT
-Contient les script d'Alliance Telecom
+Contient les scripts utilitaires d'Alliance Telecom
