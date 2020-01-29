@@ -20,7 +20,8 @@ case $option in
 
     d)
         dossier=$OPTARG
-
+    ;;
+    
     h)
         help="1"
     ;;
