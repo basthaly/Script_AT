@@ -21,7 +21,7 @@ case $option in
     d)
         dossier=$OPTARG
     ;;
-    
+
     h)
         help="1"
     ;;
@@ -52,7 +52,7 @@ Exemple:
 
 elif [ $name = "1" ];then
     if [ $recherch = "1" ];then
-        cat $dossier$fich | grep $grep
+        cat $dossier$fich | grep $grep --color
     else
         cat $dossier$fich
     fi
