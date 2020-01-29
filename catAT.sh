@@ -3,9 +3,10 @@
 help="0"
 name="0"
 recherch="0"
+save="0"
 dossier="./"
 
-while getopts "d:n:r:" option
+while getopts "f:d:n:r:" option
 do
 case $option in
     n)
@@ -26,6 +27,9 @@ case $option in
         help="1"
     ;;
 
+    f)
+        save=$OPTARG
+
 esac
 done
 
@@ -37,24 +41,32 @@ Description :
     Le programme est un cat avancé permettant de lire un ou plusieurs fichier (Pour lire plusieurs fichier, utiliser * -> par exemple : file* va lire file, file1, file68... )
     Le programme peut aussi chercher un mot particulier au sein du fichier.
 Exemple:
-    catAT -h
+    catAT \e[32m-h\e[32m
         Affiche l'aide
 
-    catAT -n fichier
+    catAT \e[34m-n fichier\e[32m
         va cat le(s) fichier(s) en question
 
-        catAT -n fichier -r test
+        \e[34m-r test\e[32m
             Cette option permet de chercher un mot dans le(s) fichier(s)
-        catAT -n fichier -d dossier
+        \e[34m-d dossier\e[32m
             Cette option permet de choisir le dossier dans lequel le programme travaille
 \e[37m
 """
 
 elif [ $name = "1" ];then
     if [ $recherch = "1" ];then
-        cat $dossier$fich | grep $grep --color
+        if [ $save != "0" ];then
+            cat $dossier$fich | grep $grep > $save
+        else
+            cat $dossier$fich | grep $grep --color
+        fi
     else
-        cat $dossier$fich
+        if [ $save != "0" ];then
+            cat $dossier$fich > $save
+        else
+            cat $dossier$fich
+        fi
     fi
     
 else
