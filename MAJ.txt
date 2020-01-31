@@ -1,0 +1,12 @@
+catAT :
+v1.0 :
+Permet de faire un cat avancé
+
+V1.1 :
+Permet de choisir un fichier dans lequel exporter le résultat
+
+V1.2 :
+Permet de choisir dans le dossier dans lequel on veut aller chercher les fichiers
+
+V1.3 :
+Ajout ds commandes -A -B pour avoir des lignes autour du grep
