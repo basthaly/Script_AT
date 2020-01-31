@@ -47,9 +47,9 @@ done
 if [ $name = "1" -a $help = "0" ];then
     if [ $recherch = "1" ];then
         if [ $save != "0" ];then
-            cat $dossier$fich | grep $grep -A $after -B $before > $save
+            cat $dossier$fich | grep "$grep" -A $after -B $before > $save
         else
-            cat $dossier$fich | grep $grep -A $after -B $before --color
+            cat $dossier$fich | grep "$grep" -A $after -B $before --color
         fi
     else
         if [ $save != "0" ];then
